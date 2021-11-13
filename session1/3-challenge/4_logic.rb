@@ -13,6 +13,16 @@
 
 
 def grade(num_books, has_read_books)
+  notes = "DCBA"
+  increase_if_has_read = if has_read_books then 1 else 0 end
+  case num_books
+  when 0..9
+    notes[0+increase_if_has_read]
+  when 10..20
+    notes[1+increase_if_has_read]
+  else "A"
+    notes[2+increase_if_has_read]
+  end
 end
 
 

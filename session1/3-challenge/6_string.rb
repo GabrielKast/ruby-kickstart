@@ -6,5 +6,8 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+  init = if return_odds then 1 else 0 end
+  result=""
+  string.split(//).each.with_index { |letter, i| if i%2==init then result<< letter end }
+  result
 end

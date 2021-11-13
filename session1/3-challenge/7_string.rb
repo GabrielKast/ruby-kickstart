@@ -5,5 +5,13 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
-
+  take=false
+  result=""
+  string.split(//).each { |letter|
+    if take then
+      result << letter
+    end
+    take = (letter =~/r/i)
+  }
+  result
 end
