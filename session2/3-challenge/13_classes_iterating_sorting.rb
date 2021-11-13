@@ -73,3 +73,49 @@
 # date docs are at: http://ruby-doc.org/core/classes/Date.html
 # don't spend too much time worrying about them :)
 require 'date'
+
+# it should have a method add_blog which accepts a date and text
+# it should have a method blogs which returns an array of all blogs the user has written
+# they should be in reverse chronological order (newest first)
+
+class User
+    attr_accessor :username, :blogs
+    def initialize(username)
+        @username=username
+        @blogs = []
+    end
+
+    def add_blog date, text
+        blog = Blog.new(date, self, text)
+        @blogs << blog
+        @blogs.sort!
+        blog
+    end
+end
+
+class Blog
+    include Comparable
+    attr_accessor :date, :user, :text
+    def initialize date, user, text
+        @date = date
+        @user = user
+        @text = text
+    end
+
+    def <=> other
+         other.date <=> @date
+    end
+
+    def summary
+        @text.split(/\W/).take(10).join(" ")
+    end
+
+    def ==(other)
+        @date==other.date && @user.username==other.user.username && @text==other.text
+    end
+
+    def entry
+        @user.username + " " + @date.to_s + "\n" + @text
+    end
+end
+

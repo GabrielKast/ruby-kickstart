@@ -9,3 +9,9 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+def alternate_words words
+    alternate words.split(/[\!\@\$\#\%\^\&\*\(\)\-\=\_\+\[\]\:\;\,\.\/\<\>\?\\ \|]+/)
+end
+def alternate xs
+    0.step(xs.length-1, 2).to_a.map {|i| xs[i]}
+end

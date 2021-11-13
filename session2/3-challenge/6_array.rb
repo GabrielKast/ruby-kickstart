@@ -15,3 +15,19 @@
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
 
+# require 'prime'
+
+def prime_chars? chars
+    sum = chars.reduce(0) { | s, ch| s+ch.length}
+    sum.prime?
+    # Other solution
+    # Prime.instance.prime?(sum) 
+end
+
+def Integer.prime?
+    return false if (self==1 || self%2==0)
+    3.step(Math.sqtr(self), 2) do |x|
+        return false if self%x==0
+    end
+    return true
+end

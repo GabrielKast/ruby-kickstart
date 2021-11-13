@@ -9,5 +9,9 @@
 
 def sum_difference_product
   # your code goes here
-  
+  line = gets
+  n1, n2 = line.chomp.split(/ /)
+  n1 = n1.to_i
+  n2 = n2.to_i
+  puts "#{n1+n2}\n#{n1-n2}\n#{n1*n2}"  
 end

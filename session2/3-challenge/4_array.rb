@@ -8,5 +8,9 @@
 
 # This time you will have to define the method, it's called: get_squares
 
-
+def get_squares a
+    result = []
+    a.each { |x| if a.include?(x*x) then result << x end}
+    result.sort!
+end
 

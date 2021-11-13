@@ -20,7 +20,17 @@
 
 def hi_hi_goodbye
   # your code here
-
+  line=""
+  loop do
+    puts "Enter a number"
+    line = gets.chomp
+    if line=="bye"
+      puts "goodbye"
+      break
+    end
+    n = line.to_i
+    (1..n).each { puts "hi "}
+  end
 end
 
 

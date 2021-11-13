@@ -27,7 +27,7 @@ array = (0...5000).to_a # the numbers 1 to 5k
 
 # about half a second to access element at index 2500
 start_time = Time.now
-5_000_000.times { array[2500] }
+5_000_000.times { Array[2500] }
 Time.now - start_time # => 0.545612
 
 

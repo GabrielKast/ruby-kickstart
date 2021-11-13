@@ -14,3 +14,11 @@
 #
 # mod_three [0,1,2,3,4,5,6,7] # => [1, 2, 1, 2, 1]
 
+def mod_three numbers
+    result = []
+    numbers.each do |n|
+        modulo = n % 3
+        if modulo!=0 then result << modulo end
+    end
+    result
+end
