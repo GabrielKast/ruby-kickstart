@@ -19,3 +19,15 @@
 # match_maker true,  true,  true, true, nil     # => [false, true]
 # match_maker true,  true,  true, 0, nil        # => [false, true]
 
+def translate(t) if t then true else false end end
+
+def match_maker maker, *args
+  result = []
+  args.each_slice(2).map do |a, b|
+    if maker then
+      translate(a)== ! translate(b)
+    else
+      translate(a)== translate(b)
+    end
+  end
+end

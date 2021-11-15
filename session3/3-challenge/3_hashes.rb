@@ -6,3 +6,12 @@
 #
 # Example:
 # word_count "The dog and the cat" # => {"the" => 2, "dog" => 1, "and" => 1, "cat" => 1}
+
+def word_count sentence
+  result = Hash.new(0)
+  sentence.split(/\W+/).each do |word|
+    indexed_word = word.downcase
+    result[indexed_word] = result[indexed_word]+1
+  end
+  result
+end

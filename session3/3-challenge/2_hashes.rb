@@ -8,6 +8,20 @@
 # staircase 4  # => {1 => [], 3 => [2]}
 # staircase 5  # => {1 => [], 3 => [2], 5 =>[2, 4]}
 
+def staircase n
+  result = {}
+  evens = []
+  (1..n).each do |i|
+    if i.odd?
+      result[i] = [] + evens
+    else
+      evens = evens << i
+    end
+  end
+  result
+end
+
+
 
 
 
